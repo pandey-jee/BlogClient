@@ -1,8 +1,14 @@
 import axios from 'axios';
 
+// Backend API Configuration
+// TODO: Replace this URL with your actual deployed backend URL
+const PRODUCTION_API_URL = 'https://blog-server-uckw.onrender.com/api'; // ✅ NEW
+
+const DEVELOPMENT_API_URL = 'http://localhost:3001/api';
+
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://YOUR_RAILWAY_APP_NAME.railway.app/api'  // Replace with your actual Railway URL
-  : 'http://localhost:3001/api';
+  ? PRODUCTION_API_URL
+  : DEVELOPMENT_API_URL;
 
 // Create axios instance
 const api = axios.create({
